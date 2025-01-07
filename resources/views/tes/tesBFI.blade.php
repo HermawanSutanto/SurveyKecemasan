@@ -20,12 +20,11 @@
         <p class="text-sm text-gray-700 mb-6 text-center">
             Bacalah petunjuk ini seluruhnya sebelum mulai mengisi. Pertanyaan berikut berhubungan dengan masalah yang mungkin mengganggu Anda selama 30 hari terakhir.
         </p>
-        <form id="mentalHealthTest" action="{{ route('tes.storeSRQ') }}" method="POST" class="space-y-6">
+        <form id="mentalHealthTest" action="{{ route('tes.store') }}" method="POST" class="space-y-6">
             @csrf
             <input type="hidden" name="nama_lengkap" value="{{ session('namalengkap') }}">
             <input type="hidden" id="hasilTes" name="hasil_tes">
             <input type="hidden" id="interpretasiTes" name="interpretasi">
-            <input type="hidden" id="test" name="test">
 
             <!-- Kartu Pertanyaan -->
             <div id="cards-container">
@@ -394,7 +393,6 @@
 
             document.getElementById('hasilTes').value = totalScore;
             document.getElementById('interpretasiTes').value = interpretation;
-            document.getElementById('test').value = 'SRQ';
 
             document.getElementById('mentalHealthTest').submit();
         });

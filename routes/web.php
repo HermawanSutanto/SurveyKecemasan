@@ -85,8 +85,12 @@ Route::get('/tes/tesresultumum', [TesUmumController::class, 'showresult'])->name
 Route::get('/opsi/{test}', [TesPerawatController::class, 'show'])->name('opsi.index');
 Route::get('/welcome', [DashboardController::class, 'index'])->middleware('auth');
 Route::post('/pelaksana/store', [TesPerawatController::class, 'store'])->name('pelaksana.store');
-Route::post('/tes/simpan', [TesPerawatController::class, 'storeSRQ'])->name('tes.store');
+Route::post('/tes/simpanSRQ', [TesPerawatController::class, 'storeSRQ'])->name('tes.storeSRQ');
 Route::post('/tes/save', [TesUmumController::class, 'storeSRQ'])->name('tes.save');
+Route::post('/tes/simpanSAS', [TesPerawatController::class, 'storeSAS'])->name('tes.storeSAS');
+Route::post('/tes/simpanSDQ', [TesPerawatController::class, 'storeSDQ'])->name('tes.storeSDQ');
+
+
 
 Route::get('/tes/tes{jenistes}', [TesPerawatController::class, 'showtes'])->name('tes.showtes');
 
