@@ -7,13 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.1/dist/tailwind.min.css" rel="stylesheet">
     @vite('resources/css/app.css')
 </head>
-<body class="font-sans bg-white">
+<body class="font-sans bg-gradient-to-b from-coklat_muda via-orange-300 to-coklat_muda">
     <x-navbar />
-    <main id="home" class="py-8 bg-white-300 md:px-40 h-auto md:mb-40">
+    <body class="font-sans bg-gradient-to-b from-coklat_muda via-orange-300 to-coklat_muda">
         <section class="mb-8 mt-10 h-full text-center xl:text-left px-5 sm:px-20">
             <div class="container mx-auto flex items-center justify-between">
                 <x-back-button />
-                <h2 class="text-3xl font-semibold text-gray-600 mb-8">Tes Psikologi</h2>
+                <h2 class="text-3xl font-semibold text-gray-600 mb-8">Tes {{ $test }}</h2>
                 @auth
                     <a href="{{ route('rekap.showriwayat', ['test' => $test]) }}" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
                         Riwayat
@@ -21,7 +21,7 @@
                 @endauth
             </div>
             
-            <section class="bg-white mx-5 sm:mx-10">
+            <section class=" mx-5 sm:mx-10 my-20">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Card 1 -->
                     <div 
